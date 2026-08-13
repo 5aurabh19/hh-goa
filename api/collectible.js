@@ -12,10 +12,17 @@ function siteUrl(request) {
 
 export default async function handler(request, response) {
   const id = typeof request.query.id === "string" ? request.query.id : ""
-  if (id === "a13ff6c7-bd1e-4488-a92f-a83399c203e7") {
-    response.writeHead(302, { Location: "/" })
-    return response.end()
-  }
+  const id = typeof request.query.id === "string" ? request.query.id : ""
+
+if (
+  id === "a13ff6c7-bd1e-4488-a92f-a83399c203e7" ||
+  request.url.includes("a13ff6c7-bd1e-4488-a92f-a83399c203e7")
+) {
+  response.writeHead(302, {
+    Location: "https://hacker-house-goa-chi.vercel.app/"
+  })
+  return response.end()
+}
   if (!/^[0-9a-f-]{36}$/i.test(id)) return response.status(404).send("Collectible not found.")
 
   try {
