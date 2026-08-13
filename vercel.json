@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/share/a13ff6c7-bd1e-4488-a92f-a83399c203e7",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/share/:id",
+      "destination": "/api/collectible?id=:id"
+    }
+  ]
+}
