@@ -11,6 +11,11 @@ function siteUrl(request) {
 }
 
 export default async function handler(request, response) {
+  response.writeHead(302, {
+    Location: "https://hacker-house-goa-chi.vercel.app/"
+  })
+  return response.end()
+  
   const id = typeof request.query.id === "string" ? request.query.id : ""
   const id = typeof request.query.id === "string" ? request.query.id : ""
 
